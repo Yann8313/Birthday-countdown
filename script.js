@@ -3,15 +3,10 @@ const hours = document.getElementById('hours');
 const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
 const countdown = document.getElementById('countdown');
-const year = document.getElementById('year');
-const loading = document.getElementById('loading');
 
 const currentYear = new Date().getFullYear();
 
 const birthdayDate = new Date(`April 21 ${currentYear + 1} 00:00:00`);
-
-//Set background year
-year.innerText = currentYear + 1;
 
 // Update countdown time
 
@@ -31,12 +26,6 @@ function updateCountDown() {
   minutes.innerHTML = m < 10 ? '0' + m : m;
   seconds.innerHTML = s < 10 ? '0' + s : s;
 }
-
-// Show spinner before countdowm
-setTimeout(() => {
-  loading.remove();
-  countdown.style.display = "flex";
-}, 1000);
 
 // Run every seconds
 setInterval(updateCountDown, 1000);
